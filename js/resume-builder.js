@@ -112,7 +112,7 @@ function populateAbout() {
       a.href = sanitizeUrl(link.url);
       a.target = '_blank';
       a.rel = 'noopener noreferrer'; // Security best practice
-      a.title = sanitizeText(link.platform);
+      a.title = link.platform;
       
       const i = document.createElement('i');
       i.className = link.icon;
@@ -206,7 +206,9 @@ function populateSkills() {
       span.appendChild(icon);
       
       li.appendChild(span);
-      li.appendChild(document.createTextNode(`${lang.name} · ${lang.skills} · ${lang.proficiency}`));
+      li.appendChild(document.createTextNode(
+        `${lang.name} · ${lang.skills} · ${lang.proficiency}`
+      ));
       
       allUlElements[0].appendChild(li);
     });
@@ -227,7 +229,7 @@ function populateSkills() {
       a.href = sanitizeUrl(tool.url);
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
-      a.title = sanitizeText(tool.name);
+      a.title = tool.name;
       
       if (tool.iconType === 'iconify') {
         // Create a span for iconify instead of using li directly
@@ -271,7 +273,6 @@ function populateSkills() {
       const icon = document.createElement('i');
       icon.className = 'fas fa-check';
       span.appendChild(icon);
-      
       li.appendChild(span);
       li.appendChild(document.createTextNode(item));
       

@@ -2,7 +2,7 @@
   "about": {
     "firstName": "Guilherme",
     "lastName": "Sendyk",
-    "bio": "I am techie at heart, quick learner, sometimes a workaholic, and always up for a challenge. Originally from Brazil, embarked on my world tour with the first stop in San Francisco, currently living and working in New York.",
+    "bio": "I am a techie at heart, quick learner, sometimes a workaholic, and always up for a challenge. Originally from Brazil, embarked on my world tour with the first stop in San Francisco, currently living and working in New York.",
     "socialLinks": [
       {
         "platform": "LinkedIn",
@@ -24,7 +24,7 @@
       "startDate": "November 2020",
       "endDate": "Present",
       "responsibilities": [
-        "Responsible in triaging incoming tickets and making sure they are resolved in a timely manner.",
+        "Responsible for triaging incoming tickets and making sure they are resolved in a timely manner.",
         "Responsible for managing new releases of the Bloomberg Terminal Software to its users.",
         "Develop and maintain automation tools to effectively test repetitive tasks on each new software release."
       ]
@@ -65,7 +65,7 @@
       "startDate": "June 2013",
       "endDate": "December 2014",
       "responsibilities": [
-        "As a Technical Support Representative I deliver platinum customer support via phone, chats, and emails. Responsible in guiding clients as quickly and effective as possible into resolving their issues related to the Bloomberg Terminal, Desktop API (Bloomberg proprietary Office add-ins), and Bloomberg proprietary Hardware.",
+        "As a Technical Support Representative I deliver platinum customer support via phone, chats, and emails. Responsible for guiding clients as quickly and effectively as possible into resolving their issues related to the Bloomberg Terminal, Desktop API (Bloomberg proprietary Office add-ins), and Bloomberg proprietary Hardware.",
         "Responsible for identifying bugs, trends, and suggestions for improvement within our products.",
         "Promoted after 6 months in the role to Backup Team Leader for the Latin American region, where I assisted on monitoring and managing global coverage for the department."
       ]
@@ -143,7 +143,7 @@
     ]
   },
   "interests": {
-    "summary": "I love learning new things, admittedly I sometimes go too deep down the reddit rabbit hole. I am a Lego connoisseur, Formula 1 aficionado, and in my spare time I enjoy watching movies and television shows.",
+    "summary": "I love learning new things, admittedly I sometimes go too deep down the Reddit rabbit hole. I am a Lego connoisseur, Formula 1 aficionado, and in my spare time I enjoy watching movies and television shows.",
     "details": "I am always looking for ways to enhance my work and side projects. I achieve that by either reinventing workflows to make them simpler, or by looking into new technologies to apply to my day-to-day life.",
     "hobbies": "When forced outdoors, I will relocate to another indoor facility to play squash."
   }
