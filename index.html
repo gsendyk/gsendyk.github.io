@@ -29,14 +29,24 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Consent Management for GDPR Compliance -->
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
+          });
+        </script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPKYKMJYZP"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
-          gtag('config', 'G-RPKYKMJYZP');
+          gtag('config', 'G-RPKYKMJYZP', {
+            'anonymize_ip': true
+          });
         </script>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -223,5 +233,51 @@
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- Cookie Consent Banner -->
+        <div id="cookie-consent-banner" class="cookie-banner">
+            <div class="cookie-banner-content">
+                <h4>Cookie & Analytics Consent</h4>
+                <p>We use Google Analytics to understand how you use our site. We only store analytics data if you consent.</p>
+                <div class="cookie-banner-buttons">
+                    <button id="cookie-accept" class="btn btn-primary">Accept Analytics</button>
+                    <button id="cookie-reject" class="btn btn-secondary">Reject</button>
+                </div>
+            </div>
+        </div>
+        <!-- Cookie Consent Script -->
+        <script>
+            function handleCookieConsent(accept) {
+                if (accept) {
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'granted',
+                        'ad_storage': 'granted'
+                    });
+                    localStorage.setItem('cookie-consent', 'accepted');
+                } else {
+                    localStorage.setItem('cookie-consent', 'rejected');
+                }
+                document.getElementById('cookie-consent-banner').style.display = 'none';
+            }
+
+            // Check if consent was previously given
+            function initializeConsentBanner() {
+                const consent = localStorage.getItem('cookie-consent');
+                if (consent === 'accepted') {
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'granted',
+                        'ad_storage': 'granted'
+                    });
+                    document.getElementById('cookie-consent-banner').style.display = 'none';
+                } else if (consent === 'rejected') {
+                    document.getElementById('cookie-consent-banner').style.display = 'none';
+                }
+            }
+
+            document.getElementById('cookie-accept').addEventListener('click', () => handleCookieConsent(true));
+            document.getElementById('cookie-reject').addEventListener('click', () => handleCookieConsent(false));
+            
+            // Initialize on page load
+            window.addEventListener('load', initializeConsentBanner);
+        </script>
     </body>
 </html>
