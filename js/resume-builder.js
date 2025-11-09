@@ -115,7 +115,7 @@ function populateAbout() {
       a.title = sanitizeText(link.platform);
       
       const i = document.createElement('i');
-      i.className = sanitizeText(link.icon);
+      i.className = link.icon;
       
       a.appendChild(i);
       socialIconsContainer.appendChild(a);
@@ -230,13 +230,16 @@ function populateSkills() {
       a.title = sanitizeText(tool.name);
       
       if (tool.iconType === 'iconify') {
-        li.className = 'list-inline-item iconify';
-        li.setAttribute('data-icon', sanitizeText(tool.icon));
-        a.appendChild(li);
-        allUlElements[1].appendChild(a);
+        // Create a span for iconify instead of using li directly
+        const iconifySpan = document.createElement('span');
+        iconifySpan.className = 'iconify';
+        iconifySpan.setAttribute('data-icon', tool.icon);
+        a.appendChild(iconifySpan);
+        li.appendChild(a);
+        allUlElements[1].appendChild(li);
       } else {
         const icon = document.createElement('i');
-        icon.className = sanitizeText(tool.icon);
+        icon.className = tool.icon;
         a.appendChild(icon);
         li.appendChild(a);
         allUlElements[1].appendChild(li);

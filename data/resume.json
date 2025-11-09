@@ -100,6 +100,7 @@
       {
         "name": "Git",
         "icon": "fab fa-git",
+        "iconType": "fontawesome",
         "url": "https://git-scm.com/"
       },
       {
@@ -123,6 +124,7 @@
       {
         "name": "Python",
         "icon": "fab fa-python",
+        "iconType": "fontawesome",
         "url": "https://www.python.org/"
       },
       {
