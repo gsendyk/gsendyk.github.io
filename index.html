@@ -154,8 +154,7 @@
             function handleCookieConsent(accept) {
                 if (accept) {
                     gtag('consent', 'update', {
-                        'analytics_storage': 'granted',
-                        'ad_storage': 'granted'
+                        'analytics_storage': 'granted'
                     });
                     localStorage.setItem('cookie-consent', 'accepted');
                 } else {
@@ -169,8 +168,7 @@
                 const consent = localStorage.getItem('cookie-consent');
                 if (consent === 'accepted') {
                     gtag('consent', 'update', {
-                        'analytics_storage': 'granted',
-                        'ad_storage': 'granted'
+                        'analytics_storage': 'granted'
                     });
                     document.getElementById('cookie-consent-banner').style.display = 'none';
                 } else if (consent === 'rejected') {
@@ -178,11 +176,18 @@
                 }
             }
 
-            document.getElementById('cookie-accept').addEventListener('click', () => handleCookieConsent(true));
-            document.getElementById('cookie-reject').addEventListener('click', () => handleCookieConsent(false));
-            
-            // Initialize on page load
-            window.addEventListener('load', initializeConsentBanner);
+            // Initialize on page load and attach event listeners safely
+            window.addEventListener('load', function() {
+                const acceptButton = document.getElementById('cookie-accept');
+                const rejectButton = document.getElementById('cookie-reject');
+                
+                if (acceptButton && rejectButton) {
+                    acceptButton.addEventListener('click', () => handleCookieConsent(true));
+                    rejectButton.addEventListener('click', () => handleCookieConsent(false));
+                }
+                
+                initializeConsentBanner();
+            });
         </script>
     </body>
 </html>

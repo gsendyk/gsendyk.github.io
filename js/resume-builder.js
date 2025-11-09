@@ -7,6 +7,32 @@
 let resumeData = null;
 
 /**
+ * Sanitize text to prevent XSS attacks
+ * Escapes HTML special characters
+ */
+function sanitizeText(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+/**
+ * Sanitize URL to prevent javascript: or data: URL attacks
+ */
+function sanitizeUrl(url) {
+  const allowedProtocols = ['http:', 'https:', 'mailto:'];
+  try {
+    const parsed = new URL(url, window.location.origin);
+    if (allowedProtocols.includes(parsed.protocol)) {
+      return url;
+    }
+  } catch (e) {
+    // Invalid URL
+  }
+  return '#';
+}
+
+/**
  * Fetch and load resume data from JSON
  */
 async function loadResumeData() {
@@ -56,7 +82,18 @@ function populateAbout() {
   }
   
   if (h1Element) {
-    h1Element.innerHTML = `${about.firstName}<br><span class="text-primary">${about.lastName}</span>`;
+    // Clear existing content
+    h1Element.textContent = '';
+    // Create sanitized elements
+    const firstNameNode = document.createTextNode(about.firstName);
+    const br = document.createElement('br');
+    const span = document.createElement('span');
+    span.className = 'text-primary';
+    span.textContent = about.lastName;
+    
+    h1Element.appendChild(firstNameNode);
+    h1Element.appendChild(br);
+    h1Element.appendChild(span);
   }
   
   // Update bio
@@ -65,12 +102,24 @@ function populateAbout() {
     bioElement.textContent = about.bio;
   }
   
-  // Update social links
+  // Update social links - sanitize URLs and use safe DOM methods
   const socialIconsContainer = document.querySelector('#about .social-icons');
   if (socialIconsContainer) {
-    socialIconsContainer.innerHTML = about.socialLinks
-      .map(link => `<a class="social-icon" href="${link.url}" target="_blank" title="${link.platform}"><i class="${link.icon}"></i></a>`)
-      .join('');
+    socialIconsContainer.textContent = ''; // Clear existing content
+    about.socialLinks.forEach(link => {
+      const a = document.createElement('a');
+      a.className = 'social-icon';
+      a.href = sanitizeUrl(link.url);
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer'; // Security best practice
+      a.title = sanitizeText(link.platform);
+      
+      const i = document.createElement('i');
+      i.className = sanitizeText(link.icon);
+      
+      a.appendChild(i);
+      socialIconsContainer.appendChild(a);
+    });
   }
 }
 
@@ -87,21 +136,43 @@ function populateExperience() {
   const existingItems = experienceContainer.querySelectorAll('.d-flex');
   existingItems.forEach(item => item.remove());
   
-  // Add new experience items
+  // Add new experience items using safe DOM methods
   experiences.forEach((job, index) => {
-    const jobHTML = `
-      <div class="d-flex flex-column flex-md-row justify-content-between ${index < experiences.length - 1 ? 'mb-5' : ''}">
-        <div class="flex-grow-1">
-          <h3 class="mb-0">${job.title}</h3>
-          <div class="subheading mb-3">${job.company} | ${job.location}</div>
-          <ul>
-            ${job.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
-          </ul>
-        </div>
-        <div class="flex-shrink-0"><span class="text-primary">${job.startDate} - ${job.endDate}</span></div>
-      </div>
-    `;
-    experienceContainer.insertAdjacentHTML('beforeend', jobHTML);
+    const jobDiv = document.createElement('div');
+    jobDiv.className = `d-flex flex-column flex-md-row justify-content-between ${index < experiences.length - 1 ? 'mb-5' : ''}`;
+    
+    const flexGrow = document.createElement('div');
+    flexGrow.className = 'flex-grow-1';
+    
+    const h3 = document.createElement('h3');
+    h3.className = 'mb-0';
+    h3.textContent = job.title;
+    
+    const subheading = document.createElement('div');
+    subheading.className = 'subheading mb-3';
+    subheading.textContent = `${job.company} | ${job.location}`;
+    
+    const ul = document.createElement('ul');
+    job.responsibilities.forEach(resp => {
+      const li = document.createElement('li');
+      li.textContent = resp;
+      ul.appendChild(li);
+    });
+    
+    flexGrow.appendChild(h3);
+    flexGrow.appendChild(subheading);
+    flexGrow.appendChild(ul);
+    
+    const flexShrink = document.createElement('div');
+    flexShrink.className = 'flex-shrink-0';
+    const dateSpan = document.createElement('span');
+    dateSpan.className = 'text-primary';
+    dateSpan.textContent = `${job.startDate} - ${job.endDate}`;
+    flexShrink.appendChild(dateSpan);
+    
+    jobDiv.appendChild(flexGrow);
+    jobDiv.appendChild(flexShrink);
+    experienceContainer.appendChild(jobDiv);
   });
 }
 
@@ -124,9 +195,21 @@ function populateSkills() {
   // First ul is for languages
   if (allUlElements[0]) {
     console.log('Populating languages into ul[0]');
-    allUlElements[0].innerHTML = skills.languages
-      .map(lang => `<li><span class="fa-li"><i class="fas fa-check"></i></span>${lang.name} &#183; ${lang.skills} &#183; ${lang.proficiency}</li>`)
-      .join('');
+    allUlElements[0].textContent = ''; // Clear existing content
+    skills.languages.forEach(lang => {
+      const li = document.createElement('li');
+      
+      const span = document.createElement('span');
+      span.className = 'fa-li';
+      const icon = document.createElement('i');
+      icon.className = 'fas fa-check';
+      span.appendChild(icon);
+      
+      li.appendChild(span);
+      li.appendChild(document.createTextNode(`${lang.name} · ${lang.skills} · ${lang.proficiency}`));
+      
+      allUlElements[0].appendChild(li);
+    });
   } else {
     console.warn('ul[0] not found for languages');
   }
@@ -134,15 +217,31 @@ function populateSkills() {
   // Second ul is for tools
   if (allUlElements[1]) {
     console.log('Populating tools into ul[1]');
-    allUlElements[1].innerHTML = skills.tools
-      .map(tool => {
-        if (tool.iconType === 'iconify') {
-          return `<a href="${tool.url}" target="_blank" title="${tool.name}"><li class="list-inline-item iconify" data-icon="${tool.icon}"></li></a>`;
-        } else {
-          return `<li class="list-inline-item"><a href="${tool.url}" target="_blank" title="${tool.name}"><i class="${tool.icon}"></i></a></li>`;
-        }
-      })
-      .join('');
+    allUlElements[1].textContent = ''; // Clear existing content
+    
+    skills.tools.forEach(tool => {
+      const li = document.createElement('li');
+      li.className = 'list-inline-item';
+      
+      const a = document.createElement('a');
+      a.href = sanitizeUrl(tool.url);
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.title = sanitizeText(tool.name);
+      
+      if (tool.iconType === 'iconify') {
+        li.className = 'list-inline-item iconify';
+        li.setAttribute('data-icon', sanitizeText(tool.icon));
+        a.appendChild(li);
+        allUlElements[1].appendChild(a);
+      } else {
+        const icon = document.createElement('i');
+        icon.className = sanitizeText(tool.icon);
+        a.appendChild(icon);
+        li.appendChild(a);
+        allUlElements[1].appendChild(li);
+      }
+    });
     
     // Reinitialize Iconify if already loaded
     if (typeof Iconify !== 'undefined' && Iconify && typeof Iconify.scan === 'function') {
@@ -159,12 +258,24 @@ function populateSkills() {
   // Third ul is for workflow
   if (allUlElements[2]) {
     console.log('Populating workflow into ul[2]');
-    const workflowHTML = skills.workflow
-      .map(item => `<li><span class="fa-li"><i class="fas fa-check"></i></span>${item}</li>`)
-      .join('');
-    console.log('Workflow HTML:', workflowHTML);
-    allUlElements[2].innerHTML = workflowHTML;
-    console.log('Workflow ul after setting innerHTML:', allUlElements[2].outerHTML);
+    allUlElements[2].textContent = ''; // Clear existing content
+    
+    skills.workflow.forEach(item => {
+      const li = document.createElement('li');
+      
+      const span = document.createElement('span');
+      span.className = 'fa-li';
+      const icon = document.createElement('i');
+      icon.className = 'fas fa-check';
+      span.appendChild(icon);
+      
+      li.appendChild(span);
+      li.appendChild(document.createTextNode(item));
+      
+      allUlElements[2].appendChild(li);
+    });
+    
+    console.log('Workflow ul after population:', allUlElements[2].outerHTML);
   } else {
     console.warn('ul[2] not found for workflow');
   }
@@ -196,20 +307,24 @@ function populateInterests() {
     children[i].remove();
   }
   
-  // Insert the paragraphs after h2
-  const paragraphsHTML = `
-    <p>${interests.summary}</p>
-    <p>${interests.details}</p>
-    <p class="mb-0">${interests.hobbies}</p>
-  `;
+  // Create and insert sanitized paragraphs
+  const p1 = document.createElement('p');
+  p1.textContent = interests.summary;
   
-  console.log('Interests HTML to insert:', paragraphsHTML);
+  const p2 = document.createElement('p');
+  p2.textContent = interests.details;
+  
+  const p3 = document.createElement('p');
+  p3.className = 'mb-0';
+  p3.textContent = interests.hobbies;
+  
+  console.log('Interests paragraphs created');
   
   if (h2) {
-    h2.insertAdjacentHTML('afterend', paragraphsHTML);
+    h2.after(p1, p2, p3);
     console.log('Interests container after insertion:', interestsContainer.outerHTML);
   } else {
-    interestsContainer.innerHTML += paragraphsHTML;
+    interestsContainer.append(p1, p2, p3);
   }
 }
 
