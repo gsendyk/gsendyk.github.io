@@ -238,5 +238,16 @@
                 initializeConsentBanner();
             });
         </script>
+        <!-- Easter egg for the curious ones -->
+        <script>
+            fetch('https://uselessfacts.jsph.pl/api/v2/facts/random?language=en')
+                .then(res => res.json())
+                .then(data => {
+                    console.log('%c🥚 Hey, curious one! Here\'s a useless fact for you:', 'font-weight:bold;font-size:14px;color:#BD5D38;');
+                    console.log('%c' + data.text, 'font-style:italic;font-size:12px;');
+                    console.log('%cSource: ' + data.source_url, 'font-size:10px;color:gray;');
+                })
+                .catch(() => {});
+        </script>
     </body>
 </html>
