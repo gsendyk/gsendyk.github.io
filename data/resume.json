@@ -1,182 +1,180 @@
 {
-  "about": {
-    "firstName": "Guilherme",
-    "lastName": "Sendyk",
-    "bio": "Automation and reliability-focused engineer with 13+ years at Bloomberg. Experience across release engineering, technical leadership, and workflow optimization. Built Python-based automation that reduced manual effort, improved release quality, and scaled operational processes across teams.",
-    "socialLinks": [
+  "basics": {
+    "name": "Guilherme Sendyk",
+    "label": "Triage Engineer",
+    "image": "assets/img/profile.jpg",
+    "summary": "I am a techie at heart, quick learner, sometimes a workaholic, and always up for a challenge. Originally from Brazil, embarked on my world tour with the first stop in San Francisco, currently living and working in New York.",
+    "location": {
+      "city": "New York",
+      "countryCode": "US",
+      "region": "NY"
+    },
+    "profiles": [
       {
-        "platform": "LinkedIn",
+        "network": "LinkedIn",
         "url": "https://www.linkedin.com/in/guilherme-sendyk/",
+        "username": "guilherme-sendyk",
         "icon": "fab fa-linkedin-in"
       },
       {
-        "platform": "GitHub",
+        "network": "GitHub",
         "url": "https://github.com/gsendyk",
+        "username": "gsendyk",
         "icon": "fab fa-github"
       }
     ]
   },
-  "experience": [
+  "work": [
     {
-      "title": "Triage Engineer",
-      "company": "Bloomberg LP",
+      "name": "Bloomberg LP",
+      "position": "Triage Engineer",
       "location": "New York, USA",
-      "startDate": "November 2020",
-      "endDate": "April 2026",
-      "responsibilities": [
-        "Managed release lifecycle for internal and client-facing software, supporting thousands of users while minimizing production risk",
-        "Reduced manual operational workload by 60%+ through Python automation of recurring release and validation tasks",
-        "Automated monthly security patch ingestion, eliminating 100% of manual download effort and ensuring consistent on-time validation",
-        "Developed JIRA automation workflows, reducing ticket creation time from minutes to seconds and improving release tracking consistency",
-        "Built internal tooling to generate 200+ release calendar events in a single execution, saving several hours per release cycle",
-        "Eliminated biweekly manual coordination task by implementing automated release cutoff notifications, improving cross-team alignment",
-        "Participated in Microsoft Security Update Validation Program, helping prevent release conflicts and production incidents",
-        "Improved release reliability by identifying and blocking faulty builds before wider deployment",
-        "Accelerated development velocity by leveraging AI-assisted tools for scripting, debugging, and workflow design"
+      "startDate": "2020-11",
+      "endDate": "",
+      "highlights": [
+        "Responsible for triaging incoming tickets and making sure they are resolved in a timely manner.",
+        "Responsible for managing new releases of the Bloomberg Terminal Software to its users.",
+        "Develop and maintain automation tools to effectively test repetitive tasks on each new software release."
       ]
     },
     {
-      "title": "Technical Support Specialist Team Leader",
-      "company": "Bloomberg LP",
+      "name": "Bloomberg LP",
+      "position": "Technical Support Specialist Team Lead",
       "location": "New York, USA",
-      "startDate": "August 2017",
-      "endDate": "November 2020",
-      "responsibilities": [
-        "Managed and developed a team of 8-12 engineers, improving performance across productivity and quality metrics",
-        "Increased team productivity and issue resolution efficiency through targeted coaching and structured feedback",
-        "Led hiring efforts, interviewing and onboarding candidates contributing to team growth and performance stability",
-        "Reduced recurring issue handling time by creating structured training and documentation for complex troubleshooting scenarios",
-        "Developed dashboards and reporting tools to track KPIs, enabling data-driven performance management",
-        "Handled performance management cases, successfully improving underperforming team members and maintaining team standards",
-        "Strengthened cross-team collaboration, improving response times and issue resolution across departments"
+      "startDate": "2016-02",
+      "endDate": "2020-11",
+      "highlights": [
+        "Maintained quality relationships with the team on both a group and individual level.",
+        "Ensured that my team's performance was on track to meet departmental goals across multiple metric categories such as productivity and quality.",
+        "Provided tailored coaching that improved individual productivity and performance.",
+        "Empowered my team to innovate and challenge traditional thinking on how to best tackle clients' technical issues.",
+        "Established strong interdepartmental relationships and strategies to make valuable contributions to the business.",
+        "Built and drove strategies for my team that aligned with the department and business goals in the region.",
+        "Involved in recruiting, hiring, and identifying candidates with potential to be successful in the role."
       ]
     },
     {
-      "title": "Global Technical Support Team Leader",
-      "company": "Bloomberg LP",
-      "location": "New York, USA",
-      "startDate": "February 2016",
-      "endDate": "July 2017",
-      "responsibilities": [
-        "Led technical support operations for high-priority client issues, ensuring timely resolution and client satisfaction",
-        "Acted as escalation point for complex incidents, reducing resolution time for critical issues",
-        "Improved operational efficiency by refining support workflows and escalation processes"
-      ]
-    },
-    {
-      "title": "Global Technical Support Backup Team Leader",
-      "company": "Bloomberg LP",
+      "name": "Bloomberg LP",
+      "position": "Technical Support Backup Team Leader",
       "location": "San Francisco, USA",
-      "startDate": "December 2014",
-      "endDate": "January 2016",
-      "responsibilities": [
-        "Served as escalation point for high-impact technical issues, supporting both internal teams and external clients",
-        "Delivered technical training sessions to 30-40 client IT professionals per session, improving self-service troubleshooting capabilities",
-        "Reduced inbound support dependency by enabling client-side IT teams through structured training programs",
-        "Supported regional expansion through hiring and onboarding initiatives"
+      "startDate": "2014-12",
+      "endDate": "2016-02",
+      "highlights": [
+        "In December 2014, was offered the position in the San Francisco office to help in building a brand-new team alongside my Team Leader. Due to that, I was responsible for interviewing candidates for the department, not only in San Francisco, but for other global Bloomberg offices as well.",
+        "Training new hires to provide the platinum customer support for the Bloomberg Software.",
+        "Subject Matter Expert in the Americas region for Desktop API (Bloomberg proprietary Office add-ins) and Network (Bloomberg Private Network) related issues.",
+        "Responsible for delivering the Bloomberg Technical Training Certification (BTTC) for external clients, successfully trained over 60 market data analysts on troubleshooting Bloomberg related products thus improving their understanding of the Bloomberg Terminal."
       ]
     },
     {
-      "title": "Global Technical Support Representative",
-      "company": "Bloomberg LP",
+      "name": "Bloomberg LP",
+      "position": "Technical Support Representative / Backup Team Leader",
       "location": "São Paulo, Brazil",
-      "startDate": "June 2013",
-      "endDate": "November 2014",
-      "responsibilities": [
-        "Handled high-volume technical support across phone, chat, and email, often managing multiple concurrent issues",
-        "Provided bilingual support (English and Portuguese) to a global client base",
-        "Troubleshot networking issues using diagnostic tools such as ping and traceroute",
-        "Coordinated with telecom providers to resolve connectivity outages impacting client operations",
-        "Promoted to leadership role within 6 months based on performance and technical capability"
+      "startDate": "2013-06",
+      "endDate": "2014-12",
+      "highlights": [
+        "As a Technical Support Representative I deliver platinum customer support via phone, chats, and emails. Responsible for guiding clients as quickly and effectively as possible into resolving their issues related to the Bloomberg Terminal, Desktop API (Bloomberg proprietary Office add-ins), and Bloomberg proprietary Hardware.",
+        "Responsible for identifying bugs, trends, and suggestions for improvement within our products.",
+        "Promoted after 6 months in the role to Backup Team Leader for the Latin American region, where I assisted on monitoring and managing global coverage for the department."
       ]
     },
     {
-      "title": "Information Systems Intern",
-      "company": "Bloomberg LP",
+      "name": "Bloomberg LP",
+      "position": "Information System Intern",
       "location": "São Paulo, Brazil",
-      "startDate": "November 2012",
-      "endDate": "May 2013",
-      "responsibilities": [
-        "Provided IT support for internal employees, resolving hardware and software issues",
-        "Configured and deployed loaner devices, ensuring operational readiness for client-facing teams",
-        "Supported onboarding logistics including device setup and phone system configuration"
+      "startDate": "2012-11",
+      "endDate": "2013-05",
+      "highlights": [
+        "Provided support for internal Bloomberg employees experiencing issues with their hardware and software.",
+        "Configured loaner devices (laptop/mobile phones) for Bloomberg Sales Team enabling them to effectively perform their duties while on a client visit. Similarly configured loaners for employees visiting the São Paulo office from another Bloomberg Office.",
+        "Configured and assigned phone extensions to new hires that joined the company throughout Latin America (PABX)."
       ]
     }
   ],
-  "skills": {
-    "languages": [
-      {
-        "name": "Portuguese",
-        "proficiency": "Native",
-        "skills": "Read/Write/Speak"
-      },
-      {
-        "name": "English",
-        "proficiency": "Fluent",
-        "skills": "Read/Write/Speak"
-      }
-    ],
-    "tools": [
-      {
-        "name": "Git",
-        "icon": "fab fa-git",
-        "iconType": "fontawesome",
-        "url": "https://git-scm.com/"
-      },
-      {
-        "name": "Grafana",
-        "icon": "cib:grafana",
-        "iconType": "iconify",
-        "url": "https://grafana.com/"
-      },
-      {
-        "name": "Jenkins",
-        "icon": "simple-icons:jenkins",
-        "iconType": "iconify",
-        "url": "https://www.jenkins.io/"
-      },
-      {
-        "name": "Jira",
-        "icon": "cib:jira",
-        "iconType": "iconify",
-        "url": "https://www.atlassian.com/software/jira"
-      },
-      {
-        "name": "Python",
-        "icon": "fab fa-python",
-        "iconType": "fontawesome",
-        "url": "https://www.python.org/"
-      },
-      {
-        "name": "Splunk",
-        "icon": "simple-icons:splunk",
-        "iconType": "iconify",
-        "url": "https://www.splunk.com/"
-      },
-      {
-        "name": "GitHub Copilot",
-        "icon": "simple-icons:githubcopilot",
-        "iconType": "iconify",
-        "url": "https://github.com/features/copilot"
-      },
-      {
-        "name": "Claude Code",
-        "icon": "simple-icons:anthropic",
-        "iconType": "iconify",
-        "url": "https://claude.ai/"
-      }
-    ],
-    "workflow": [
-      "Workflow automation and process optimization using Python.",
-      "Release lifecycle management, validation, and change management.",
-      "Observability and monitoring with Grafana and Splunk.",
-      "Networking, Linux, and infrastructure troubleshooting.",
-      "AI-assisted development with GitHub Copilot and Claude Code."
-    ]
-  },
-  "interests": {
-    "summary": "I love learning new things, admittedly I sometimes go too deep down the Reddit rabbit hole. I am a Lego connoisseur, Formula 1 aficionado, and in my spare time I enjoy watching movies and television shows.",
-    "details": "I am always looking for ways to enhance my work and side projects. I achieve that by either reinventing workflows to make them simpler, or by looking into new technologies to apply to my day-to-day life.",
-    "hobbies": "When forced outdoors, I will relocate to another indoor facility to play squash."
+  "skills": [
+    {
+      "name": "Programming Languages & Tools",
+      "keywords": ["Git", "Grafana", "Jenkins", "Jira", "Python", "Splunk"],
+      "tools": [
+        {
+          "name": "Git",
+          "icon": "fab fa-git",
+          "iconType": "fontawesome",
+          "url": "https://git-scm.com/"
+        },
+        {
+          "name": "Grafana",
+          "icon": "cib:grafana",
+          "iconType": "iconify",
+          "url": "https://grafana.com/"
+        },
+        {
+          "name": "Jenkins",
+          "icon": "simple-icons:jenkins",
+          "iconType": "iconify",
+          "url": "https://www.jenkins.io/"
+        },
+        {
+          "name": "Jira",
+          "icon": "cib:jira",
+          "iconType": "iconify",
+          "url": "https://www.atlassian.com/software/jira"
+        },
+        {
+          "name": "Python",
+          "icon": "fab fa-python",
+          "iconType": "fontawesome",
+          "url": "https://www.python.org/"
+        },
+        {
+          "name": "Splunk",
+          "icon": "simple-icons:splunk",
+          "iconType": "iconify",
+          "url": "https://www.splunk.com/"
+        }
+      ]
+    },
+    {
+      "name": "Workflow",
+      "keywords": [
+        "Data Analysis in Excel/Python.",
+        "Network troubleshooting.",
+        "Dashboard creation in Grafana, Splunk, Humio.",
+        "Windows/Mac troubleshooting.",
+        "Bloomberg Software (troubleshooting/usage)."
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Portuguese",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technology & Entertainment",
+      "summary": "I love learning new things, admittedly I sometimes go too deep down the Reddit rabbit hole. I am a Lego connoisseur, Formula 1 aficionado, and in my spare time I enjoy watching movies and television shows.",
+      "keywords": ["Reddit", "Lego", "Formula 1", "Movies", "Television"]
+    },
+    {
+      "name": "Innovation",
+      "summary": "I am always looking for ways to enhance my work and side projects. I achieve that by either reinventing workflows to make them simpler, or by looking into new technologies to apply to my day-to-day life.",
+      "keywords": ["Workflow Optimization", "New Technologies"]
+    },
+    {
+      "name": "Sports",
+      "summary": "When forced outdoors, I will relocate to another indoor facility to play squash.",
+      "keywords": ["Squash"]
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/gsendyk/gsendyk.github.io/main/data/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2026-03-08"
   }
 }
