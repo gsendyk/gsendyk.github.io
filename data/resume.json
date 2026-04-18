@@ -107,12 +107,12 @@
     "languages": [
       {
         "name": "Portuguese",
-        "proficiency": "Native or bilingual",
+        "proficiency": "Native",
         "skills": "Read/Write/Speak"
       },
       {
         "name": "English",
-        "proficiency": "Native or bilingual",
+        "proficiency": "Fluent",
         "skills": "Read/Write/Speak"
       }
     ],
@@ -146,6 +146,12 @@
         "icon": "fab fa-python",
         "iconType": "fontawesome",
         "url": "https://www.python.org/"
+      },
+      {
+        "name": "Splunk",
+        "icon": "simple-icons:splunk",
+        "iconType": "iconify",
+        "url": "https://www.splunk.com/"
       },
       {
         "name": "GitHub Copilot",
