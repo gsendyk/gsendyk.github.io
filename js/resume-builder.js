@@ -59,7 +59,6 @@ async function loadResumeData() {
       throw new Error(`Failed to load resume data: ${response.status}`);
     }
     resumeData = await response.json();
-    console.log('Resume data loaded:', resumeData);
     populateResume();
   } catch (error) {
     console.error('Error loading resume data:', error);
@@ -211,11 +210,9 @@ function populateSkills() {
 
   // Get all ul elements in the skills section
   const allUlElements = skillsSection.querySelectorAll('ul');
-  console.log(`Found ${allUlElements.length} ul elements in skills section`);
 
   // First ul is for languages (top-level resumeData.languages)
   if (allUlElements[0] && resumeData.languages) {
-    console.log('Populating languages into ul[0]');
     allUlElements[0].textContent = ''; // Clear existing content
     resumeData.languages.forEach(lang => {
       const li = document.createElement('li');
@@ -239,7 +236,6 @@ function populateSkills() {
   // Find the skills entry that has a 'tools' sub-array
   const toolsSkill = resumeData.skills ? resumeData.skills.find(s => s.tools) : null;
   if (allUlElements[1] && toolsSkill) {
-    console.log('Populating tools into ul[1]');
     allUlElements[1].textContent = ''; // Clear existing content
 
     toolsSkill.tools.forEach(tool => {
@@ -285,7 +281,6 @@ function populateSkills() {
   // Find the skills entry named 'Workflow'
   const workflowSkill = resumeData.skills ? resumeData.skills.find(s => s.name === 'Workflow') : null;
   if (allUlElements[2] && workflowSkill) {
-    console.log('Populating workflow into ul[2]');
     allUlElements[2].textContent = ''; // Clear existing content
 
     workflowSkill.keywords.forEach(item => {
@@ -302,7 +297,6 @@ function populateSkills() {
       allUlElements[2].appendChild(li);
     });
 
-    console.log('Workflow ul after population:', allUlElements[2].outerHTML);
   } else {
     console.warn('ul[2] not found for workflow');
   }
@@ -320,7 +314,6 @@ function populateInterests() {
     return;
   }
 
-  console.log('Interests data:', interests);
 
   // Get the h2 element
   const h2 = interestsContainer.querySelector('h2');
@@ -346,11 +339,9 @@ function populateInterests() {
       return p;
     });
 
-  console.log('Interests paragraphs created');
 
   if (h2) {
     h2.after(...paragraphs);
-    console.log('Interests container after insertion:', interestsContainer.outerHTML);
   } else {
     interestsContainer.append(...paragraphs);
   }
