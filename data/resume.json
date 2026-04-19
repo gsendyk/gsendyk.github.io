@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Guilherme Sendyk",
-    "label": "Triage Engineer",
+    "label": "Automation & Reliability Engineer",
     "image": "assets/img/profile.jpg",
     "summary": "I am a techie at heart, quick learner, sometimes a workaholic, and always up for a challenge. Originally from Brazil, embarked on my world tour with the first stop in San Francisco, currently living and working in New York.",
     "location": {
@@ -27,43 +27,47 @@
   "work": [
     {
       "name": "Bloomberg LP",
-      "position": "Triage Engineer",
-      "location": "New York, USA",
+      "position": "Triage & Release Ops Engineer",
+      "location": "New York, NY",
       "startDate": "2020-11",
-      "endDate": "",
+      "endDate": "2026-04",
       "highlights": [
-        "Responsible for triaging incoming tickets and making sure they are resolved in a timely manner.",
-        "Responsible for managing new releases of the Bloomberg Terminal Software to its users.",
-        "Develop and maintain automation tools to effectively test repetitive tasks on each new software release."
+        "Managed end-to-end release lifecycle for Bloomberg Terminal software, preventing faulty deployments from reaching production environments",
+        "Participated in Microsoft Security Update Validation Program, identifying compatibility risks before public patch releases",
+        "Reduced manual workload by 60%+ by building Python automation for recurring release and validation processes",
+        "Automated monthly security patch ingestion via web parsing, eliminating manual effort and ensuring consistent execution",
+        "Developed JIRA automation to generate release tracking tasks, improving consistency and reducing creation time from minutes to seconds",
+        "Built internal tooling to generate 200+ release calendar events in a single execution, saving hours per release cycle",
+        "Replaced manual biweekly coordination process with automated release cutoff notifications, improving cross-team alignment",
+        "Performed manual and automated validation of software behavior to ensure release quality and stability",
+        "Leveraged AI-assisted tools to accelerate scripting, debugging, and automation development"
       ]
     },
     {
       "name": "Bloomberg LP",
-      "position": "Technical Support Specialist Team Lead",
-      "location": "New York, USA",
+      "position": "Technical Support Team Leader",
+      "location": "New York, NY",
       "startDate": "2016-02",
       "endDate": "2020-11",
       "highlights": [
-        "Maintained quality relationships with the team on both a group and individual level.",
-        "Ensured that my team's performance was on track to meet departmental goals across multiple metric categories such as productivity and quality.",
-        "Provided tailored coaching that improved individual productivity and performance.",
-        "Empowered my team to innovate and challenge traditional thinking on how to best tackle clients' technical issues.",
-        "Established strong interdepartmental relationships and strategies to make valuable contributions to the business.",
-        "Built and drove strategies for my team that aligned with the department and business goals in the region.",
-        "Involved in recruiting, hiring, and identifying candidates with potential to be successful in the role."
+        "Led and developed a team of 8-12 engineers, improving performance across productivity and quality metrics",
+        "Conducted weekly one-on-ones, performance reviews, and career development planning",
+        "Managed performance improvement initiatives, successfully elevating underperforming team members",
+        "Led hiring and interviewing efforts to scale and strengthen the team",
+        "Developed training programs and documentation for complex technical issues, reducing resolution time",
+        "Built dashboards and reporting tools to track KPIs and enable data-driven team management"
       ]
     },
     {
       "name": "Bloomberg LP",
-      "position": "Technical Support Backup Team Leader",
-      "location": "San Francisco, USA",
+      "position": "Global Technical Support Backup Team Leader",
+      "location": "San Francisco, CA",
       "startDate": "2014-12",
-      "endDate": "2016-02",
+      "endDate": "2016-01",
       "highlights": [
-        "In December 2014, was offered the position in the San Francisco office to help in building a brand-new team alongside my Team Leader. Due to that, I was responsible for interviewing candidates for the department, not only in San Francisco, but for other global Bloomberg offices as well.",
-        "Training new hires to provide the platinum customer support for the Bloomberg Software.",
-        "Subject Matter Expert in the Americas region for Desktop API (Bloomberg proprietary Office add-ins) and Network (Bloomberg Private Network) related issues.",
-        "Responsible for delivering the Bloomberg Technical Training Certification (BTTC) for external clients, successfully trained over 60 market data analysts on troubleshooting Bloomberg related products thus improving their understanding of the Bloomberg Terminal."
+        "Relocated to support regional expansion and scaling of technical support operations",
+        "Delivered technical training sessions to 30-40 client IT professionals, enabling self-service troubleshooting",
+        "Served as escalation point for complex client issues and supported ticket queue management"
       ]
     },
     {
@@ -71,30 +75,30 @@
       "position": "Technical Support Representative / Backup Team Leader",
       "location": "São Paulo, Brazil",
       "startDate": "2013-06",
-      "endDate": "2014-12",
+      "endDate": "2014-11",
       "highlights": [
-        "As a Technical Support Representative I deliver platinum customer support via phone, chats, and emails. Responsible for guiding clients as quickly and effectively as possible into resolving their issues related to the Bloomberg Terminal, Desktop API (Bloomberg proprietary Office add-ins), and Bloomberg proprietary Hardware.",
-        "Responsible for identifying bugs, trends, and suggestions for improvement within our products.",
-        "Promoted after 6 months in the role to Backup Team Leader for the Latin American region, where I assisted on monitoring and managing global coverage for the department."
+        "Provided bilingual technical support (English and Portuguese) across phone, chat, and email for global clients",
+        "Diagnosed and resolved network connectivity issues using tools such as ping and traceroute",
+        "Debugged client connectivity including Bloomberg routers and coordinated with telecom providers",
+        "Promoted to Backup Team Leader within 6 months based on performance and technical capability"
       ]
     },
     {
       "name": "Bloomberg LP",
-      "position": "Information System Intern",
+      "position": "Information Systems Intern",
       "location": "São Paulo, Brazil",
       "startDate": "2012-11",
       "endDate": "2013-05",
       "highlights": [
-        "Provided support for internal Bloomberg employees experiencing issues with their hardware and software.",
-        "Configured loaner devices (laptop/mobile phones) for Bloomberg Sales Team enabling them to effectively perform their duties while on a client visit. Similarly configured loaners for employees visiting the São Paulo office from another Bloomberg Office.",
-        "Configured and assigned phone extensions to new hires that joined the company throughout Latin America (PABX)."
+        "Provided internal IT support for hardware and software issues",
+        "Configured and deployed loaner devices and supported employee onboarding setup"
       ]
     }
   ],
   "skills": [
     {
       "name": "Programming Languages & Tools",
-      "keywords": ["Git", "Grafana", "Jenkins", "Jira", "Python", "Splunk"],
+      "keywords": ["Git", "Grafana", "Jenkins", "Jira", "Python", "Splunk", "GitHub Copilot", "Claude Code"],
       "tools": [
         {
           "name": "Git",
@@ -131,15 +135,28 @@
           "icon": "simple-icons:splunk",
           "iconType": "iconify",
           "url": "https://www.splunk.com/"
+        },
+        {
+          "name": "GitHub Copilot",
+          "icon": "simple-icons:githubcopilot",
+          "iconType": "iconify",
+          "url": "https://github.com/features/copilot"
+        },
+        {
+          "name": "Claude Code",
+          "icon": "simple-icons:anthropic",
+          "iconType": "iconify",
+          "url": "https://www.anthropic.com/claude"
         }
       ]
     },
     {
       "name": "Workflow",
       "keywords": [
-        "Data Analysis in Excel/Python.",
+        "Release Management.",
+        "Validation & Change Control.",
+        "Dashboard creation in Grafana, Splunk.",
         "Network troubleshooting.",
-        "Dashboard creation in Grafana, Splunk, Humio.",
         "Windows/Mac troubleshooting.",
         "Bloomberg Software (troubleshooting/usage)."
       ]
